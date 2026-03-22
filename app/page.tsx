@@ -94,6 +94,7 @@ export default function Page() {
       <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
       <style>{`
         * { box-sizing: border-box; margin: 0; padding: 0; }
+        html, body { overflow-x: hidden; max-width: 100%; }
         ::selection { background: #3b82f6; color: white; }
         ::-webkit-scrollbar { width: 6px; }
         ::-webkit-scrollbar-track { background: transparent; }
@@ -116,8 +117,8 @@ export default function Page() {
         .skill-cat { margin-bottom: 16px; }
         .skill-name { font-family: 'Space Mono', monospace; font-size: 13px; color: #3b82f6; margin-bottom: 6px; text-transform: uppercase; letter-spacing: 1px; }
         .mobile-menu-btn { display: none; background: transparent; border: 1px solid rgba(255,255,255,0.1); color: #e8e6e3; padding: 8px 12px; border-radius: 8px; cursor: pointer; font-size: 14px; }
-        @media (max-width: 768px) { .mobile-menu-btn { display: block; } .desktop-nav { display: none; } .mobile-nav { display: flex; flex-direction: column; gap: 4px; padding: 12px 0; } }
-        @media (min-width: 769px) { .mobile-nav { display: none !important; } .desktop-nav { display: flex; } }
+        @media (max-width: 900px) { .mobile-menu-btn { display: block; } .desktop-nav { display: none !important; } .mobile-nav { display: flex; flex-direction: column; gap: 4px; padding: 12px 0; } }
+        @media (min-width: 901px) { .mobile-nav { display: none !important; } .desktop-nav { display: flex; } }
       `}</style>
 
       <header style={{ position: "sticky", top: 0, zIndex: 50, background: "rgba(10,10,15,0.9)", backdropFilter: "blur(20px)", borderBottom: "1px solid rgba(255,255,255,0.05)" }}>
