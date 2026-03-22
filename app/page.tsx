@@ -86,7 +86,7 @@ export default function Page() {
   const [lang, setLang] = useState("en");
   const [activeSection, setActiveSection] = useState("summary");
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const t = content[lang];
+  const t = content[lang as keyof typeof content];
   const sections = ["summary", "projects", "experience", "skills"];
 
   return (
