@@ -128,7 +128,7 @@ export default function Page() {
               <span style={{ fontWeight: 700, fontSize: 16, whiteSpace: "nowrap" }}>{t.name.split(" ")[0]}</span>
             </div>
             <nav className="desktop-nav" style={{ display: "flex", alignItems: "center", gap: 4 }}>
-              {sections.map((s) => (<div key={s} className={`nav-item ${activeSection === s ? "active" : ""}`} onClick={() => setActiveSection(s)}>{t.nav[s]}</div>))}
+              {sections.map((s) => (<div key={s} className={`nav-item ${activeSection === s ? "active" : ""}`} onClick={() => setActiveSection(s)}>{t.nav[s as keyof typeof t.nav]}</div>))}
             </nav>
             <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
               <div className="lang-toggle">
@@ -138,7 +138,7 @@ export default function Page() {
               <button className="mobile-menu-btn" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>&#9776;</button>
             </div>
           </div>
-          {mobileMenuOpen && (<nav className="mobile-nav">{sections.map((s) => (<div key={s} className={`nav-item ${activeSection === s ? "active" : ""}`} onClick={() => { setActiveSection(s); setMobileMenuOpen(false); }}>{t.nav[s]}</div>))}</nav>)}
+          {mobileMenuOpen && (<nav className="mobile-nav">{sections.map((s) => (<div key={s} className={`nav-item ${activeSection === s ? "active" : ""}`} onClick={() => { setActiveSection(s); setMobileMenuOpen(false); }}>{t.nav[s as keyof typeof t.nav]}</div>))}</nav>)}
         </div>
       </header>
 
